@@ -21,13 +21,7 @@ namespace DeadlineRush.Systems
         /// 240..299 → Phase3 (22:00–22:59)
         /// 300..359 → Phase4 (23:00–23:59)
         /// </summary>
-        public static WorldPhase GetPhase(int minute)
-        {
-            if (minute < GameConfig.Phase2Start) return WorldPhase.Phase1_18_20;
-            if (minute < GameConfig.Phase3Start) return WorldPhase.Phase2_20_22;
-            if (minute < GameConfig.Phase4Start) return WorldPhase.Phase3_22_23;
-            return WorldPhase.Phase4_23_24;
-        }
+        public static WorldPhase GetPhase(int minute) => GameConfig.GetPhase(minute);
 
         /// <summary>
         /// Chuyển đổi phút game (0..359) sang chuỗi giờ:phút hiển thị (18:00..23:59).

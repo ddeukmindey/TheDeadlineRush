@@ -25,6 +25,21 @@ namespace DeadlineRush.Core
         public const int Phase3Start = 240;  // 22:00
         public const int Phase4Start = 300;  // 23:00
 
+        /// <summary>
+        /// Xác định WorldPhase từ phút game hiện tại.
+        /// 0..119 → Phase1 (18:00–19:59)
+        /// 120..239 → Phase2 (20:00–21:59)
+        /// 240..299 → Phase3 (22:00–22:59)
+        /// 300..359 → Phase4 (23:00–23:59)
+        /// </summary>
+        public static WorldPhase GetPhase(int minute)
+        {
+            if (minute < Phase2Start) return WorldPhase.Phase1_18_20;
+            if (minute < Phase3Start) return WorldPhase.Phase2_20_22;
+            if (minute < Phase4Start) return WorldPhase.Phase3_22_23;
+            return WorldPhase.Phase4_23_24;
+        }
+
         // ─── Chỉ số ban đầu ─────────────────────────────────────────────
         public const int StartEnergy = 100;
         public const int StartStress = 10;

@@ -59,7 +59,7 @@ namespace DeadlineRush.Core
 
             // Phát sự kiện ban đầu để UI/World đồng bộ
             EventBus.RaiseStatsChanged(CurrentRun.energy, CurrentRun.stress, CurrentRun.progress);
-            EventBus.RaiseTimeChanged(CurrentRun.minute, Systems.TimeSystem.GetPhase(CurrentRun.minute));
+            EventBus.RaiseTimeChanged(CurrentRun.minute, GameConfig.GetPhase(CurrentRun.minute));
             EventBus.RaiseAreaChanged(CurrentRun.currentArea);
 
             Debug.Log("[GameManager] New Run started. State reset to defaults.");

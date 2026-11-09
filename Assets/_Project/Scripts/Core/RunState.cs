@@ -14,7 +14,6 @@ namespace DeadlineRush.Core
     /// Chứa toàn bộ trạng thái trong một Run. Reset hoàn toàn khi bắt đầu Run mới.
     /// Không bao giờ được lưu ra đĩa (chỉ MemoryData mới được lưu).
     /// </summary>
-    [Serializable]
     public class RunState
     {
         // ─── Chỉ số chính ─────────────────────────────────────────────────
