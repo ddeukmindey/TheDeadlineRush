@@ -69,6 +69,8 @@ crashlytics-build.properties
 # Test artifacts and logs
 test_results.xml
 test_run.log
+UpgradeLog*
+_UpgradeReport_Files/
 
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
