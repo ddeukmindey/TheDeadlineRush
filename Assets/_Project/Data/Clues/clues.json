@@ -1,0 +1,67 @@
+{
+  "clues": [
+    {
+      "id": "clue_core_passcode",
+      "title": "Mật mã ổ khóa",
+      "isCore": true,
+      "description": "Mẩu giấy kẹp trong sách tham khảo tại Thư viện ghi: 'Mật mã cửa phòng bí mật cuối hành lang: 2728'.",
+      "foundHint": "Khám phá Thư viện sau 22:00."
+    },
+    {
+      "id": "clue_core_attempt_data",
+      "title": "Dữ liệu ATTEMPT",
+      "isCore": true,
+      "description": "Dữ liệu nhật ký máy tính ghi lại các lần chạy đồ án thất bại trước đó với các nhãn ATTEMPT_xx.",
+      "foundHint": "Tương tác máy tính KTX hoặc phòng máy khi tiến độ >= 70% hoặc sau 22:00."
+    },
+    {
+      "id": "clue_core_loop_record",
+      "title": "Bản ghi vòng lặp",
+      "isCore": true,
+      "description": "Bản ghi máy chủ gốc chứng minh hệ thống tự động reset lại 18:00 mỗi khi đồ án đạt 100% nộp thành công.",
+      "foundHint": "Tìm thấy trong Khu vực bí mật sau khi mở cửa bằng mật mã 2728."
+    },
+    {
+      "id": "clue_minor_strange_note",
+      "title": "Mẩu giấy kỳ lạ",
+      "isCore": false,
+      "description": "Một mẩu giấy bị vò nát dưới gầm bàn: 'Đừng tin vào đồng hồ trên tường... nó chạy chậm hơn bình thường.'",
+      "foundHint": "Tìm thấy khi kiểm tra phòng KTX."
+    },
+    {
+      "id": "clue_minor_old_photo",
+      "title": "Tấm ảnh cũ mất mặt",
+      "isCore": false,
+      "description": "Tấm ảnh chụp nhóm sinh viên tại KTX, nhưng toàn bộ khuôn mặt đã bị cào rách một cách kỳ dị.",
+      "foundHint": "Tìm thấy ở hành lang hoặc căn tin."
+    },
+    {
+      "id": "clue_minor_error_log",
+      "title": "Nhật ký lỗi hệ thống",
+      "isCore": false,
+      "description": "Trích xuất log terminal: 'FATAL: Memory reset triggered at 23:59:59. Reason: Project submission completed.'",
+      "foundHint": "Tìm thấy khi điều tra máy tính phòng máy."
+    },
+    {
+      "id": "clue_minor_npc_hint",
+      "title": "Lời thì thầm của bạn học",
+      "isCore": false,
+      "description": "Người bạn cùng nhóm thẫn thờ nói: 'Hình như tao đã từng nhắc mày câu này rồi... hôm qua? Hay vừa nãy?'",
+      "foundHint": "Trò chuyện với bạn cùng nhóm khi tiến độ cao."
+    },
+    {
+      "id": "clue_minor_scratched_wall",
+      "title": "Vết cào trên tường",
+      "isCore": false,
+      "description": "Những vạch đếm số ngày bị cào sâu vào tường sau cánh cửa: đếm được đúng 27 vạch.",
+      "foundHint": "Tìm thấy tại góc tối hành lang."
+    },
+    {
+      "id": "clue_minor_hidden_message",
+      "title": "Dòng code ẩn",
+      "isCore": false,
+      "description": "Trong mã nguồn đồ án có một hàm chú thích lạ: 'void BreakLoop() { DeleteProjectCopy(); Disconnect(); }'.",
+      "foundHint": "Tìm thấy khi điều tra tin nhắn bí ẩn hoặc rà soát mã nguồn."
+    }
+  ]
+}

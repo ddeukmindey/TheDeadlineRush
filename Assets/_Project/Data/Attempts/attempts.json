@@ -1,0 +1,200 @@
+{
+  "attempts": [
+    {
+      "attemptNumber": 1,
+      "title": "ATTEMPT #01 — 23:59:12",
+      "timestamp": "Day 0 - 23:59",
+      "content": "Lần thử đầu tiên. Đồ án nộp thành công lúc 23:59. Cả nhóm ăn mừng. Tôi gục xuống bàn ngủ vì kiệt sức. Nhưng khi mở mắt ra... đồng hồ phòng KTX lại chỉ 18:00. Tại sao đồ án trên máy tính lại trở về 0%?",
+      "isKeyAttempt": true
+    },
+    {
+      "attemptNumber": 2,
+      "title": "ATTEMPT #02 — 23:45:00",
+      "timestamp": "Day 1 - 23:45",
+      "content": "Tôi nghĩ mình bị ảo giác do thiếu ngủ. Tiếp tục code. Lại hoàn thành trước deadline. Và lại tỉnh dậy vào đúng 18:00. Cảm giác Deja vu này là gì?",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 3,
+      "title": "ATTEMPT #03 — 21:10:40",
+      "timestamp": "Day 2 - 21:10",
+      "content": "Cố tình không code đồ án, chỉ nằm ngủ trên giường. Đến 23:59, chuông báo deadline vang lên inh ỏi. Cơn đau đầu dữ dội ập đến. Mắt tối sầm lại... 18:00 một lần nữa.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 4,
+      "title": "ATTEMPT #04 — 22:30:15",
+      "timestamp": "Day 3 - 22:30",
+      "content": "Hỏi người bạn cùng phòng: 'Mày có nhớ hôm qua chúng ta làm gì không?'. Nó cười bảo tôi thức khuya nhiều quá ngáo rồi. Rõ ràng hôm qua nó cũng nói y hệt câu đó, từng cử chỉ, từng nụ cười.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 5,
+      "title": "ATTEMPT #05 — 23:58:45",
+      "timestamp": "Day 4 - 23:58",
+      "content": "Tiến độ 100%. Nộp bài. Mọi thứ tối sầm. Lại thức dậy lúc 18:00 trên chiếc giường này. Tôi bắt đầu khắc những vạch đếm lên sau cánh cửa. Đây không phải là giấc mơ.",
+      "isKeyAttempt": true
+    },
+    {
+      "attemptNumber": 6,
+      "title": "ATTEMPT #06 — 20:15:00",
+      "timestamp": "Day 5 - 20:15",
+      "content": "Chạy ra cổng KTX để trốn thoát trước 20:00. Cổng chính bị khóa chặt. Bảo vệ không có ở đó. Mọi lối ra ngoài trường đều dẫn ngược về hành lang KTX.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 7,
+      "title": "ATTEMPT #07 — 23:12:00",
+      "timestamp": "Day 6 - 23:12",
+      "content": "Stress tăng vọt. Tôi nghe thấy tiếng thì thầm phát ra từ khe thông gió. 'Ngươi không thể thoát nếu vẫn tiếp tục làm theo kịch bản.'",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 8,
+      "title": "ATTEMPT #08 — 19:40:22",
+      "timestamp": "Day 7 - 19:40",
+      "content": "Kiểm tra log máy tính phòng máy. Tôi phát hiện hàng chục thư mục rác mang tên ATTEMPT bị ẩn đi. Ai đã tạo ra chúng? Tại sao lại có nhật ký của chính tôi?",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 9,
+      "title": "ATTEMPT #09 — 22:05:10",
+      "timestamp": "Day 8 - 22:05",
+      "content": "Đồ đạc trong phòng bắt đầu tự dịch chuyển khi tôi quay lưng. Cuốn sách trên bàn đổi vị trí. Chiếc ghế xoay hướng về phía tôi.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 10,
+      "title": "ATTEMPT #10 — 23:50:00",
+      "timestamp": "Day 9 - 23:50",
+      "content": "Nộp bài thử nghiệm lần thứ 10. Hệ thống phản hồi bằng một thông điệp lạ: 'Mã số sinh viên không tồn tại trong cơ sở dữ liệu thực'.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 11,
+      "title": "ATTEMPT #11 — 21:55:00",
+      "timestamp": "Day 10 - 21:55",
+      "content": "Cạn kiệt năng lượng. Ngã quỵ ở căn tin lúc 21:55. Không kịp tới 23:59. Cảm giác tim ngừng đập trước khi không gian reset lại...",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 12,
+      "title": "ATTEMPT #12 — 22:40:30",
+      "timestamp": "Day 11 - 22:40",
+      "content": "Tôi bắt đầu nhận ra những điều phi lý đến rùng mình. Người bạn cùng nhóm nói chuyện nhưng khóe miệng không chuyển động. Ánh đèn hành lang nhấp nháy theo nhịp tim tôi.",
+      "isKeyAttempt": true
+    },
+    {
+      "attemptNumber": 13,
+      "title": "ATTEMPT #13 — 23:20:00",
+      "timestamp": "Day 12 - 23:20",
+      "content": "Tìm kiếm tài liệu ở thư viện. Mọi cuốn sách đều có trang cuối bị xé rách. Có người đang cố xóa dấu vết.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 14,
+      "title": "ATTEMPT #14 — 20:50:18",
+      "timestamp": "Day 13 - 20:50",
+      "content": "Nhận được một cuộc gọi lạ. Chỉ có tiếng thở gấp và âm thanh gõ bàn phím liên hồi. 'Dừng lại đi... mày đang nuôi dưỡng nó.'",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 15,
+      "title": "ATTEMPT #15 — 23:35:45",
+      "timestamp": "Day 14 - 23:35",
+      "content": "Stress vượt quá 80%. Mọi khuôn mặt trên poster hành lang đều biến dạng thành khuôn mặt tôi với đôi mắt rỗng tuếch.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 16,
+      "title": "ATTEMPT #16 — 19:10:00",
+      "timestamp": "Day 15 - 19:10",
+      "content": "Thử đập vỡ màn hình máy tính. Kính vỡ vụn nhưng các dòng code vẫn tiếp tục tự động chạy trong không khí. Nơi này không tuân theo quy luật vật lý.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 17,
+      "title": "ATTEMPT #17 — 22:15:30",
+      "timestamp": "Day 16 - 22:15",
+      "content": "Hành lang kéo dài vô tận. Càng chạy về phía trước, cánh cửa phòng KTX càng lùi xa. Đồng hồ cứ đều đặn tích tắc từng giây.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 18,
+      "title": "ATTEMPT #18 — 23:05:00",
+      "timestamp": "Day 17 - 23:05",
+      "content": "Sau 23:00, tất cả NPC biến mất hoàn toàn. KTX chỉ còn là một nấm mồ im lặng đến ghê người.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 19,
+      "title": "ATTEMPT #19 — 21:30:12",
+      "timestamp": "Day 18 - 21:30",
+      "content": "Tôi tìm thấy bức ảnh chụp nhóm sinh viên năm ngoái. Không có ai trong ảnh cả. Chỉ có căn phòng trống và một màn hình máy tính sáng đèn.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 20,
+      "title": "ATTEMPT #20 — 22:50:00",
+      "timestamp": "Day 19 - 22:50",
+      "content": "Căn phòng bí mật cuối hành lang... Ổ khóa số 4 chữ số. Mật mã là gì? Có ai đó đã khóa nó từ bên trong. Chắc chắn có liên quan đến thư viện.",
+      "isKeyAttempt": true
+    },
+    {
+      "attemptNumber": 21,
+      "title": "ATTEMPT #21 — 20:00:00",
+      "timestamp": "Day 20 - 20:00",
+      "content": "Tôi thử ghi lại mọi thứ vào cuốn sổ tay. Nhưng khi vòng lặp reset, cuốn sổ trắng tinh. Chỉ có bộ nhớ máy chủ trung tâm là còn lưu vết tích.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 22,
+      "title": "ATTEMPT #22 — 23:40:11",
+      "timestamp": "Day 21 - 23:40",
+      "content": "Tiếng gõ cửa lúc 23:40. Khi mở ra không có ai, chỉ có một vệt mực đen kéo dài từ cửa phòng đến tận căn phòng bí mật cuối hành lang.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 23,
+      "title": "ATTEMPT #23 — 21:45:00",
+      "timestamp": "Day 22 - 21:45",
+      "content": "Điện thoại nhận tin nhắn: 'Đừng hoàn thành nó.' Lần này tôi bấm trả lời nhưng tin nhắn báo lỗi không gửi được.",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 24,
+      "title": "ATTEMPT #24 — 23:55:00",
+      "timestamp": "Day 23 - 23:55",
+      "content": "ĐỪNG HOÀN THÀNH ĐỒ ÁN! Mỗi khi tiến độ đạt 100%, vòng lặp lại tái khởi động! Việc nộp đồ án chính là kích hoạt lệnh reboot hệ thống mô phỏng!",
+      "isKeyAttempt": true
+    },
+    {
+      "attemptNumber": 25,
+      "title": "ATTEMPT #25 — 22:20:10",
+      "timestamp": "Day 24 - 22:20",
+      "content": "Lục tung thư viện trong đêm. Các trang sách bắt đầu rỉ ra chất lỏng đen kịt. Nhưng tôi đã thấy manh mối về năm thành lập và mật mã...",
+      "isKeyAttempt": false
+    },
+    {
+      "attemptNumber": 26,
+      "title": "ATTEMPT #26 — 22:45:00",
+      "timestamp": "Day 25 - 22:45",
+      "content": "Tôi đã tìm thấy mật mã ở thư viện: 2728! Phía sau cánh cửa cuối hành lang là một phòng máy chủ phụ bị niêm phong. Có một bản ghi vòng lặp ở đó...",
+      "isKeyAttempt": true
+    },
+    {
+      "attemptNumber": 27,
+      "title": "ATTEMPT #27 — 23:52:19",
+      "timestamp": "Day 26 - 23:52",
+      "content": "NẾU BẠN ĐANG ĐỌC TỆP NÀY... ĐỪNG LÀM ĐẾN 100%. Vòng lặp này được duy trì bởi chính việc nộp đồ án. Bạn phải ngắt kết nối trước khi đồng hồ điểm 23:59. Hãy thu thập đủ 3 manh mối cốt lõi, mở phòng bí mật và chọn lệnh xóa bản sao dự án!",
+      "isKeyAttempt": true
+    },
+    {
+      "attemptNumber": 28,
+      "title": "ATTEMPT #28 — 23:59:59",
+      "timestamp": "Day 27 - 23:59",
+      "content": "PROJECT COMPLETED — SUBMISSION SUCCESSFUL. Vòng lặp thứ 28 hoàn tất. Mã lỗi: LOOP_CONTINUED. Khởi tạo lại phiên làm việc mới lúc 18:00...",
+      "isKeyAttempt": true
+    }
+  ]
+}

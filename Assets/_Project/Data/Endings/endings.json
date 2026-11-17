@@ -1,0 +1,39 @@
+{
+  "endings": [
+    {
+      "endingType": "GameOver",
+      "title": "GAME OVER — KIỆT SỨC",
+      "subtitle": "Năng lượng chạm đáy trước khi kịp chạy xong deadline.",
+      "description": "Bạn gục ngã xuống bàn phím. Mắt bạn mờ dần, tai chỉ còn nghe tiếng vo ve của quạt tản nhiệt máy tính. Bạn đã kiệt sức trước khi deadline kết thúc.",
+      "details": "Hãy chú ý ăn uống và nghỉ ngơi hợp lý để duy trì thể lực (Energy > 0) trong suốt đêm."
+    },
+    {
+      "endingType": "True",
+      "title": "TRUE ENDING — PHÁ VỠ VÒNG LẶP",
+      "subtitle": "Giải thoát khỏi mô phỏng deadline bất tận.",
+      "description": "Bạn bình tĩnh chọn lệnh 'Xóa bản sao dự án và ngắt kết nối'. Màn hình máy tính rung chuyển dữ dội, các dòng mã tan biến thành những hạt bụi sáng. Không gian KTX bắt đầu nứt vỡ. Tiếng chuông đồng hồ vượt qua 23:59 và ngân vang lúc 00:00 của một ngày mới. Ánh bình minh ấm áp đầu tiên sau hàng chục vòng lặp rọi qua khung cửa sổ...",
+      "details": "Bạn đã thu thập đủ 3 manh mối cốt lõi, mở khóa Khu vực bí mật và dũng cảm xóa bỏ bản sao dự án thay vì nộp bài."
+    },
+    {
+      "endingType": "Secret",
+      "title": "SECRET ENDING — NGƯỜI QUAN SÁT",
+      "subtitle": "Biết rõ sự thật nhưng chưa thể phá vỡ cánh cửa.",
+      "description": "Bạn ngồi im lặng trước màn hình, đọc từng trang của ATTEMPT_27 và ghép nối những mẩu giấy vụn đã tìm thấy. Bạn hiểu rõ bản chất của vòng lặp mô phỏng này, nhưng bạn chưa mở được căn phòng máy chủ cuối hành lang để cắt đứt nguồn năng lượng. Đồng hồ điểm 23:59, bạn mỉm cười đón nhận lần reset tiếp theo với toàn bộ tri thức trong đầu...",
+      "details": "Bạn đã thu thập ít nhất 3 manh mối phụ và đọc tệp ATTEMPT_27. Lần tới, hãy tìm kiếm mật mã ổ khóa 2728 tại Thư viện sau 22:00!"
+    },
+    {
+      "endingType": "Bad",
+      "title": "BAD ENDING — VÒNG LẶP VÔ TẬN",
+      "subtitle": "Đồ án đạt 100% nhưng cái giá phải trả là sự cầm tù vĩnh viễn.",
+      "description": "Bạn thở phào nhấn nút 'Nộp đồ án' khi thanh tiến độ chạm 100%. Màn hình hiện dòng chữ xanh ngắt: 'PROJECT COMPLETED — SUBMISSION SUCCESSFUL'. Bạn nghĩ mình đã chiến thắng. Nhưng rồi màn hình chớp giật đỏ rực, dòng chữ 'ATTEMPT #28 CREATED' xuất hiện. Mắt bạn tối sầm. Khi tỉnh dậy, bạn lại thấy mình đang ngồi trước máy tính, kim đồng hồ chỉ đúng 18:00...",
+      "details": "Việc hoàn thành 100% đồ án chính là điều kiện kích hoạt vòng lặp khởi động lại. Đừng mù quáng làm theo yêu cầu của hệ thống!"
+    },
+    {
+      "endingType": "Normal",
+      "title": "NORMAL ENDING — BỎ LỠ DEADLINE",
+      "subtitle": "Đêm kết thúc trong sự dang dở và mơ hồ.",
+      "description": "23:59:59. Cổng nộp bài chính thức đóng lại. Bạn không kịp hoàn thành 100% đồ án và cũng không tìm ra cách phá vỡ vòng lặp. Bạn sống sót qua đêm nay mà không hiểu được những hiện tượng kỳ quái xung quanh mình là gì. Căn phòng KTX lại chìm vào im lặng tịch mịch...",
+      "details": "Bạn chưa hoàn thành đồ án và cũng chưa thu thập đủ manh mối. Hãy thử phân bổ thời gian hợp lý hơn giữa Code và Khám phá."
+    }
+  ]
+}
