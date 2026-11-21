@@ -89,5 +89,12 @@ namespace DeadlineRush.Core
 
         // ─── Mật mã SecretArea ───────────────────────────────────────────
         public const string SecretAreaPasscode = "2728";
+
+        // ─── Tương thích tên gọi giữa các Agent (Aliases) ────────────────
+        public const int MaxMinutes = MaxMinute;
+        public const int FinalChoiceMinuteMin = TrueEndingWindowMinute;
+        public const int EnergyLowThreshold = LowEnergyThreshold;
+        public const int StressHighThreshold = StressCritical;
+        public const string Passcode = SecretAreaPasscode;
     }
 }
