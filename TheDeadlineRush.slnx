@@ -1,0 +1,10 @@
+﻿<Solution>
+  <Project Path="DeadlineRush.Systems.csproj" />
+  <Project Path="DeadlineRush.Atmosphere.csproj" />
+  <Project Path="DeadlineRush.UI.csproj" />
+  <Project Path="DeadlineRush.Core.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="DeadlineRush.Atmosphere.Editor.csproj" />
+  <Project Path="DeadlineRush.Tests.EditMode.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+</Solution>
