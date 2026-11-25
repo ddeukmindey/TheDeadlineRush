@@ -1,0 +1,28 @@
+THE DEADLINE RUSH — Checklist Playtest thủ công (Agent D điều phối, mục 5B)
+===========================================================================
+Chạy sau khi Agent A ghép Integration (M14) vào MainMenu.unity + Game.unity.
+Gắn Prefab: Assets/_Project/Art/Prefabs/AtmosphereRig.prefab vào cả hai scene
+(hoặc một instance DontDestroyOnLoad).
+
+[ ] Nút "E" chỉ hiện khi đứng trong tầm tương tác và thỏa điều kiện.
+[ ] Bảng xác nhận hành động hiển thị chi phí khớp 100% số bị trừ.
+[ ] Phím Esc không đóng/né lựa chọn bắt buộc (E02, E10).
+[ ] Mở được 4 Ending (True, Secret, Bad, Normal) + Game Over khi Energy = 0.
+[ ] New Game: Energy 100 / Stress 10 / Progress 0 / 18:00; Journal trống; Memory giữ ATTEMPT.
+[ ] Tắt/mở lại game: Settings + Ký ức còn; Main Menu không có Continue.
+[ ] Bản build Windows chạy trên ít nhất 2 máy.
+
+Atmosphere / Audio (M11) — quan sát khi chơi:
+[ ] 18:00–20:00 (Phase 1): sáng ấm.
+[ ] 20:00–22:00 (Phase 2): dịu / mát hơn.
+[ ] 22:00–23:00 (Phase 3): tối, đèn chập chờn.
+[ ] 23:00–23:59 (Phase 4): rất tối.
+[ ] Stress 0–30 vs 31–60 vs 61–80 vs 81–100: vignette / grain / chroma khác rõ.
+[ ] Stress >= 61: lớp thì thầm. Stress >= 81: thêm nhịp tim.
+[ ] E02: SFX điện thoại. E04: SFX gõ cửa. E06: SFX máy tính.
+[ ] Slider Music/SFX ở Settings đổi MemoryData và volume thực tế (AudioManager poll mỗi frame).
+
+Cần chốt:
+- Project đang dùng URP Forward renderer (3D). Light2D chỉ hiện đúng khi Agent C/A
+  gán URP 2D Renderer. AtmosphereRig có Light2D Global + fallback Light + overlay dimmer.
+- Agent D không sửa Scenes/ (thuộc Agent C). Cần kéo AtmosphereRig vào scene khi ghép M14.

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d441447c7d2ed5045a356c58454d5893, type: 3}
+  m_Name: AtmosphereConfig
+  m_EditorClassIdentifier: DeadlineRush.Atmosphere::DeadlineRush.Atmosphere.AtmosphereConfig
+  phases:
+  - phase: 1
+    lightColor: {r: 1, g: 0.9, b: 0.72, a: 1}
+    intensity: 1.05
+    cameraBackground: {r: 0.12, g: 0.1, b: 0.14, a: 1}
+  - phase: 2
+    lightColor: {r: 0.82, g: 0.8, b: 0.92, a: 1}
+    intensity: 0.72
+    cameraBackground: {r: 0.08, g: 0.08, b: 0.12, a: 1}
+  - phase: 3
+    lightColor: {r: 0.55, g: 0.62, b: 0.85, a: 1}
+    intensity: 0.38
+    cameraBackground: {r: 0.04, g: 0.05, b: 0.09, a: 1}
+  - phase: 4
+    lightColor: {r: 0.4, g: 0.48, b: 0.7, a: 1}
+    intensity: 0.16
+    cameraBackground: {r: 0.02, g: 0.02, b: 0.05, a: 1}
+  stressBands:
+  - minStress: 0
+    maxStress: 30
+    vignette: 0.08
+    filmGrain: 0.02
+    chromaticAberration: 0
+    vignetteColor: {r: 0, g: 0, b: 0, a: 1}
+    saturation: 8
+    whisperLayer: 0
+    heartbeatLayer: 0
+  - minStress: 31
+    maxStress: 60
+    vignette: 0.18
+    filmGrain: 0.1
+    chromaticAberration: 0.04
+    vignetteColor: {r: 0, g: 0, b: 0, a: 1}
+    saturation: 0
+    whisperLayer: 0
+    heartbeatLayer: 0
+  - minStress: 61
+    maxStress: 80
+    vignette: 0.38
+    filmGrain: 0.28
+    chromaticAberration: 0.16
+    vignetteColor: {r: 0.12, g: 0.02, b: 0.08, a: 1}
+    saturation: -18
+    whisperLayer: 1
+    heartbeatLayer: 0
+  - minStress: 81
+    maxStress: 100
+    vignette: 0.58
+    filmGrain: 0.48
+    chromaticAberration: 0.32
+    vignetteColor: {r: 0.35, g: 0.02, b: 0.05, a: 1}
+    saturation: -32
+    whisperLayer: 1
+    heartbeatLayer: 1
+  flickerSpeed: 7.5
+  flickerAmplitude: 0.28
+  musicCrossfadeSeconds: 1.6
