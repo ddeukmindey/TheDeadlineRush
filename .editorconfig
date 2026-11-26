@@ -1,0 +1,120 @@
+# EditorConfig cho dự án Unity C# (TheDLRush)
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{yml,yaml,json}]
+indent_size = 2
+
+[*.{asmdef,asmref}]
+indent_size = 4
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.cs]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+
+# C# Formatting (Allman braces chuẩn Unity)
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_preserve_single_line_statements = false
+csharp_preserve_single_line_blocks = true
+
+# Usings
+csharp_using_directive_placement = outside_namespace:suggestion
+dotnet_sort_system_directives_first = true
+
+# Code preferences
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+dotnet_style_qualification_for_event = false:suggestion
+
+# ─── Naming Conventions ────────────────────────────────────────────────────
+
+# 1. Interface bắt đầu bằng 'I' + PascalCase
+dotnet_naming_rule.interfaces_must_be_begins_with_i.severity = warning
+dotnet_naming_rule.interfaces_must_be_begins_with_i.symbols = interface_symbols
+dotnet_naming_rule.interfaces_must_be_begins_with_i.style = begins_with_i
+
+dotnet_naming_symbols.interface_symbols.applicable_kinds = interface
+dotnet_naming_symbols.interface_symbols.applicable_accessibilities = *
+
+dotnet_naming_style.begins_with_i.required_prefix = I
+dotnet_naming_style.begins_with_i.capitalization = pascal_case
+
+# 2. Types (class, struct, enum, delegate) dùng PascalCase
+dotnet_naming_rule.types_must_be_pascal_case.severity = warning
+dotnet_naming_rule.types_must_be_pascal_case.symbols = type_symbols
+dotnet_naming_rule.types_must_be_pascal_case.style = pascal_case
+
+dotnet_naming_symbols.type_symbols.applicable_kinds = class, struct, enum, delegate
+dotnet_naming_symbols.type_symbols.applicable_accessibilities = *
+
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+
+# 3. Constants (const) dùng PascalCase
+dotnet_naming_rule.constants_must_be_pascal_case.severity = suggestion
+dotnet_naming_rule.constants_must_be_pascal_case.symbols = constant_symbols
+dotnet_naming_rule.constants_must_be_pascal_case.style = pascal_case
+
+dotnet_naming_symbols.constant_symbols.applicable_kinds = field
+dotnet_naming_symbols.constant_symbols.applicable_accessibilities = *
+dotnet_naming_symbols.constant_symbols.required_modifiers = const
+
+# 4. Static readonly fields dùng PascalCase (khớp CoreClueIds trong RunState)
+dotnet_naming_rule.static_readonly_pascal_case.severity = suggestion
+dotnet_naming_rule.static_readonly_pascal_case.symbols = static_readonly_symbols
+dotnet_naming_rule.static_readonly_pascal_case.style = pascal_case
+
+dotnet_naming_symbols.static_readonly_symbols.applicable_kinds = field
+dotnet_naming_symbols.static_readonly_symbols.applicable_accessibilities = *
+dotnet_naming_symbols.static_readonly_symbols.required_modifiers = static, readonly
+
+# 5. Private instance fields (kể cả private readonly) dùng _camelCase
+dotnet_naming_rule.private_fields_should_use_underscore.severity = suggestion
+dotnet_naming_rule.private_fields_should_use_underscore.symbols = private_instance_fields
+dotnet_naming_rule.private_fields_should_use_underscore.style = underscore_camel_case
+
+dotnet_naming_symbols.private_instance_fields.applicable_kinds = field
+dotnet_naming_symbols.private_instance_fields.applicable_accessibilities = private
+
+dotnet_naming_style.underscore_camel_case.required_prefix = _
+dotnet_naming_style.underscore_camel_case.capitalization = camel_case
+
+# 6. Public/Protected/Internal members (Methods, Properties, Events, Fields) dùng PascalCase
+dotnet_naming_rule.public_members_must_be_pascal_case.severity = suggestion
+dotnet_naming_rule.public_members_must_be_pascal_case.symbols = public_member_symbols
+dotnet_naming_rule.public_members_must_be_pascal_case.style = pascal_case
+
+dotnet_naming_symbols.public_member_symbols.applicable_kinds = method, property, event, field
+dotnet_naming_symbols.public_member_symbols.applicable_accessibilities = public, protected, internal, protected_internal
+
+# 7. Parameters & locals dùng camelCase
+dotnet_naming_rule.parameters_and_locals_camel_case.severity = suggestion
+dotnet_naming_rule.parameters_and_locals_camel_case.symbols = parameter_local_symbols
+dotnet_naming_rule.parameters_and_locals_camel_case.style = camel_case
+
+dotnet_naming_symbols.parameter_local_symbols.applicable_kinds = parameter, local
+dotnet_naming_symbols.parameter_local_symbols.applicable_accessibilities = *
+
+dotnet_naming_style.camel_case.capitalization = camel_case

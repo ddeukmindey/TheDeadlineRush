@@ -1,0 +1,188 @@
+name: Unity CI/CD
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      buildTarget:
+        description: 'Target platform to build'
+        required: true
+        default: 'Windows'
+        type: choice
+        options:
+          - Windows
+          - WebGL
+          - Android
+
+permissions:
+  contents: write
+
+env:
+  # Phiên bản khớp với ProjectSettings/ProjectVersion.txt
+  UNITY_VERSION: '6000.6.8f1'
+  PROJECT_NAME: 'TheDLRush'
+
+jobs:
+  test:
+    name: Unity Tests (EditMode & PlayMode)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository (with Git LFS)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-${{ env.UNITY_VERSION }}-test-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ runner.os }}-${{ env.UNITY_VERSION }}-test-
+            Library-${{ runner.os }}-${{ env.UNITY_VERSION }}-
+
+      - name: Run EditMode Tests
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: ${{ env.UNITY_VERSION }}
+          testMode: editmode
+          artifactsPath: test-artifacts-editmode
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run PlayMode Tests
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: ${{ env.UNITY_VERSION }}
+          testMode: playmode
+          artifactsPath: test-artifacts-playmode
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Test Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-test-results-${{ github.sha }}
+          path: |
+            test-artifacts-editmode
+            test-artifacts-playmode
+          retention-days: 7
+
+  build:
+    name: Build & Package
+    needs: test
+    # Pull Request chỉ chạy Test; Build chạy khi push lên main, tạo tag v*, hoặc workflow_dispatch
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository (with Git LFS)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Resolve Build Metadata (Target, Version, Commit Hash)
+        id: meta
+        shell: bash
+        run: |
+          INPUT_TARGET="${{ inputs.buildTarget || 'Windows' }}"
+          case "${INPUT_TARGET}" in
+            Windows)
+              TARGET_PLATFORM="StandaloneWindows64"
+              ;;
+            WebGL)
+              TARGET_PLATFORM="WebGL"
+              ;;
+            Android)
+              TARGET_PLATFORM="Android"
+              ;;
+            *)
+              echo "Unsupported buildTarget: ${INPUT_TARGET}"
+              exit 1
+              ;;
+          esac
+
+          if [ -f version.json ]; then
+            VERSION=$(python3 -c "import json; d=json.load(open('version.json')); print(f\"{d['major']}.{d['minor']}.{d['patch']}.{d['buildNumber']}\")")
+          else
+            VERSION="0.1.0.0"
+          fi
+
+          SHORT_SHA="${GITHUB_SHA::7}"
+
+          echo "targetLabel=${INPUT_TARGET}" >> "$GITHUB_OUTPUT"
+          echo "targetPlatform=${TARGET_PLATFORM}" >> "$GITHUB_OUTPUT"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "shortSha=${SHORT_SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-${{ env.UNITY_VERSION }}-${{ steps.meta.outputs.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ runner.os }}-${{ env.UNITY_VERSION }}-${{ steps.meta.outputs.targetPlatform }}-
+            Library-${{ runner.os }}-${{ env.UNITY_VERSION }}-
+
+      # LƯU Ý QUAN TRỌNG VỀ MODULE & SECRETS:
+      # 1. WebGL và Android yêu cầu Docker image của GameCI có đúng build module đi kèm
+      #    (game-ci/unity-builder tự map theo targetPlatform, vd: unityci/editor:ubuntu-6000.6.8f1-webgl-3
+      #    hoặc unityci/editor:ubuntu-6000.6.8f1-android-3; cần kiểm tra tag image tồn tại cho 6000.6.8f1).
+      # 2. Khi build Android bản release (ký APK/AAB), cần cấu hình thêm keystore và các GitHub Secrets riêng:
+      #    ANDROID_KEYSTORE_BASE64 (hoặc androidKeystoreName), ANDROID_KEYSTORE_PASS,
+      #    ANDROID_KEYALIAS_NAME, ANDROID_KEYALIAS_PASS và truyền vào bước Build bên dưới.
+      - name: Build Unity Project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: ${{ env.UNITY_VERSION }}
+          targetPlatform: ${{ steps.meta.outputs.targetPlatform }}
+          buildName: ${{ env.PROJECT_NAME }}
+          buildsPath: Builds
+          versioning: Custom
+          version: ${{ steps.meta.outputs.version }}
+
+      - name: Compress Build Output (.zip)
+        id: package
+        shell: bash
+        run: |
+          mkdir -p dist
+          ZIP_NAME="${{ env.PROJECT_NAME }}-${{ steps.meta.outputs.targetLabel }}-v${{ steps.meta.outputs.version }}-${{ steps.meta.outputs.shortSha }}.zip"
+          BUILD_DIR="Builds/${{ steps.meta.outputs.targetPlatform }}"
+          if [ ! -d "${BUILD_DIR}" ]; then
+            echo "Build output directory not found: ${BUILD_DIR}"
+            exit 1
+          fi
+          (cd "${BUILD_DIR}" && zip -r "../../dist/${ZIP_NAME}" .)
+          echo "zipPath=dist/${ZIP_NAME}" >> "$GITHUB_OUTPUT"
+          echo "zipName=${ZIP_NAME}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.PROJECT_NAME }}-${{ steps.meta.outputs.targetLabel }}-v${{ steps.meta.outputs.version }}-${{ steps.meta.outputs.shortSha }}
+          path: ${{ steps.package.outputs.zipPath }}
+          retention-days: 14
+
+      - name: Create GitHub Release (on v* tag)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.package.outputs.zipPath }}
+          generate_release_notes: true
